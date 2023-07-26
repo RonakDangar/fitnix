@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitnix * Meditation</title>
+</head>
+<body background="purple_background.jpeg">
+        <style>
+          .greeting {
+            display: flex;
+            font-family: sans-serif;
+            margin: 2vw;
+            margin-top: 1.5vw;
+            margin-right: 5vw;
+            justify-content: right;
+            font-size: 2vw;
+            color: rgb(221, 195, 147);
+          }
+          .container {
+            font-family: sans-serif;
+            border: 0vw;
+            border-radius: 0%;
+            margin: 1.2vw;
+          }
+          .nav {
+            background-color: rgba(54, 48, 105, 0.407);
+            font-family: sans-serif;
+            font-size: 1.4vw;
+            border: 0vw;
+            border-radius: 2vw;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0.9vw;
+            margin: 2vw;
+            margin-top: 1vw;
+            justify-content: right;
+            box-shadow: 0 0.4vw 0.8vw rgba(245, 242, 242, 0.2),0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
+          }
+          .nav div a {
+            margin-right: 5vw;
+            color: rgb(214, 227, 240);
+            font-weight: normal;
+          }
+          .box_med{
+            background-color: rgba(222, 150, 150, 0.264);
+            border-radius: 2vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5vw;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            color: rgb(201, 229, 253);  
+          }
+          .circle{
+            background-color: rgba(56, 233, 40, 0.789);
+            height: 20vw;
+            width: 20vw;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0.4vw 0.8vw rgba(10, 10, 10, 0.2),0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
+          }
+          .box_med p{
+            margin: 3vw;
+            font-size: 4vw;
+            margin-top: -10vw;
+          }
+          .box_med h2{
+            font-size: 6vw;
+          }
+          .box_med h5{
+            font-size: 3vw;
+            margin-top: 4vw;
+          }
+          #btnjoin2{
+            font-family: 'Poppins', sans-serif;
+            font-size: 2vw;
+            background-color: rgba(252, 241, 228, 0.583);
+            padding: 1.5vw 6vw;
+            margin: 8vw;
+            border: 0.2vw solid rgba(92, 46, 6, 0.977);
+            border-radius: 3vw;
+            color: rgba(92, 52, 6, 0.977);
+            box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2),0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
+        }
+        #btnjoin2:hover{
+          background-color: rgba(92, 59, 6, 0.977);
+          color: aliceblue;
+          transition: ease-in;
+          transition-delay: 0.05s;
+          box-shadow: 0 0.6vw 1vw rgba(0, 0, 0, 0.3),0 0.8vw 2.4vw 0 rgba(0, 0, 0, 0.29);
+        }
+        </style>
+    <div class="container">
+        <div class="greeting">
+          <img src="fatman-removebg-preview.png" width="50vw"/>
+          <p>Hello , Name</p>
+        </div>
+        <div class="nav">
+          <div class="home"><a href="#">Home</a></div>
+          <div class="aboutus"><a href="#">About Us</a></div>
+          <div class="dietplans"><a href="#">diet plans</a></div>
+          <div class="yoga"><a href="#">Yoga</a></div>
+          <div class="Account"><a href="#">Account</a></div>
+          <div class="login"><a href="#">login</a></div>
+        </div>
+        <div class="box_med">
+            <h2>Start Relaxing Now</h2>
+            <h5 id="nameChange">Inhale</h5>
+            <span class="circle"></span>
+            <p id="TimeLeft">00</p>
+            <button id="btnjoin2" onclick="timer()">Start Now</button>
+        </div>
+        <script>
+            var textid = 0;
+            function changetext(){
+                textid++;
+                var text = document.getElementdById("Namechange")
+                if(textid%2==0){
+                    text.innerHTML = "Exhale";
+                }
+                else{
+                    text.innerHTML = "Inhale";
+                }
+            }
+
+            function timer(){
+                // var btnName = document.getElementdById("btnjoin2").innerHTML = "Stop"
+                // btnName.style.color="rgba(92, 52, 6, 0.977)";
+
+
+                var timeleft = 30;
+                var element = document.getElementById("TimeLeft");
+
+                var timerID = setInterval(countdown,1000);
+
+                let btnName = document.getElementdById("btnjoin2").innerHTML = "Stop"
+                let flag = 0;
+
+                while(flag!=1){
+                    btnName.onClick = function() {flagchange()};
+
+                    function countdown(){
+                        if (timeleft == -1){
+                            clearTimeout(timerID);
+                            changetext();
+                        }
+                        else{
+                            element.innerHTML = + timeleft;
+                            timeleft--;
+                        }
+                    }
+                }
+
+                function flagchange(){
+                    flag = 1;
+                }
+            }
+        </script>
+</body>
+</html>

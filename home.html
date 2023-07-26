@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitnix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />  </head>
+  <body background="purple_background.jpeg">
+    <style>
+      .greeting {
+        display: flex;
+        font-family: sans-serif;
+        margin: 2vw;
+        margin-top: 1.5vw;
+        margin-right: 5vw;
+        justify-content: right;
+        font-size: 2vw;
+        color: rgb(221, 195, 147);
+      }
+      .container {
+        font-family: sans-serif;
+        border: 0vw;
+        border-radius: 0%;
+        margin: 1.2vw;
+      }
+      .nav {
+        background-color: rgba(54, 48, 105, 0.407);
+        font-family: sans-serif;
+        font-size: 1.4vw;
+        border: 0vw;
+        border-radius: 2vw;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.9vw;
+        margin: 2vw;
+        margin-top: 1vw;
+        justify-content: right;
+        box-shadow: 0 0.4vw 0.8vw rgba(252, 252, 252, 0.2),0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
+      }
+      .nav div a {
+        margin-right: 5vw;
+        color: rgb(214, 227, 240);
+        font-weight: normal;
+      }
+      .profile_container {
+        display: flex;
+        padding: 2vw;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: rgba(240, 213, 240, 0.265);
+        min-height: 70vh;
+        border-radius: 2vw;
+      }
+      #profilestate {
+        max-width: 50vw;
+        background-color: antiquewhite;
+        margin-right: 6vw;
+        margin-bottom: 4vw;
+        padding: 3vw;
+        display: flex;
+        flex-direction: column;
+        border: 0vw;
+        border-radius: 1.5vw;
+        box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2),
+          0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
+      }
+      #new {
+        width: 28vw;
+        height: 14vw;
+        border: 1.4vw solid #96e263;
+        border-top-left-radius: 14vw;
+        border-top-right-radius: 14vw;
+        border-bottom: 1.4vw;
+      }
+      .profile_container p {
+        font-family: sans-serif, "Times New Roman", Times, serif;
+        text-align: center;
+        font-size: 2.2vw;
+        font-style: normal;
+        font-display: block;
+        color: rgb(41, 60, 2);
+        margin-top: -5vw;
+      }
+      .profile_container span {
+        border: 0.5vw solid rgb(180, 206, 211);
+        border-radius: 3vw;
+      }
+      .workout{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: rgba(252, 228, 237, 0.427);
+        border-radius: 2vw;
+        margin-top: 2vw;
+        padding: 2vw;
+      }
+      .workoutstart{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 1vw;
+        margin: 1vw;
+        background-color: #d7e263c2;
+        border-radius: 2vw;
+        text-align: center;
+        font-family: 'Roboto Slab', serif;
+        font-weight: lighter;
+        font-size: 2.3vw;
+        box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2),0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
+      }
+      .workouttext{
+        padding: 2vw;
+        /* border-radius: 4vw;
+        box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2),0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);     */
+      }
+      .workout p{
+        font-family: 'Poppins', sans-serif;
+        font-size: 4vw;
+        color: rgba(224, 239, 58, 0.915);
+      }
+      #btnjoin{
+        font-family: 'Poppins', sans-serif;
+        font-size: 2vw;
+        background-color: rgba(250, 252, 228, 0.583);
+        padding: 1.5vw 6vw;
+        margin-top: 2vw;
+        margin-left: 2vw;
+        border: 0.2vw solid rgba(85, 92, 6, 0.977);
+        border-radius: 3vw;
+        color: rgba(83, 92, 6, 0.977);
+        box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2),0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
+      }
+      #btnjoin:hover{
+        background-color: rgba(83, 92, 6, 0.977);
+        color: aliceblue;
+        transition: ease-in;
+        transition-delay: 0.05s;
+        box-shadow: 0 0.6vw 1vw rgba(0, 0, 0, 0.3),0 0.8vw 2.4vw 0 rgba(0, 0, 0, 0.29);
+      }
+      .material-symbols-rounded {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' 0,
+        'opsz' 48
+      }
+      .foodsection{
+        margin: 1.3vw;
+      }
+      .searchbar{
+        display: flex;
+        border: 0.2vw;
+        padding: 0.7vw;
+        border-radius: 1.32vw;
+        background-color: rgba(219, 243, 251, 0.428);
+        box-shadow: 0 0.6vw 1vw rgba(0, 0, 0, 0.3),0 0.8vw 2.4vw 0 rgba(0, 0, 0, 0.29);
+      }
+      .foodsearch{
+        display: inline-block;
+        text-align: center;
+      }
+      #foodsearchinput{
+        margin: 0.5vw;
+        margin-left: 2vw;
+        width: 60vw;
+        border-radius: 1.2vw;
+        background-color: rgba(219, 243, 251, 0.995);
+        /* mix-blend-mode: lighten; */
+      }
+      ::-webkit-foodsearchinput-placeholder{
+        color: #96e263;
+      }
+      #foodsearch{
+        text-align: left;
+      }
+      .meditationSection{
+        display: flex;
+        justify-content: space-around;
+        background-color: rgba(249, 193, 143, 0.309);
+        margin: 1.2vw;
+        border: 0vw;
+        padding: 2.2vw;
+        border-radius: 1.32vw;
+      }
+      .meditationText h3{
+        font-family: 'Poppins', sans-serif;
+        font-size: 4vw;
+        color: rgb(251, 221, 180);
+      }
+      .meditationText p{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.6vw;
+        color: rgba(243, 241, 145, 0.935);
+        font-weight: bolder;
+        margin-top: 3vw;
+        margin-left: 5vw;
+      }
+      #btnjoin2{
+        font-family: 'Poppins', sans-serif;
+        font-size: 2vw;
+        background-color: rgba(252, 241, 228, 0.583);
+        padding: 1.5vw 6vw;
+        margin-top: 2vw;
+        margin-left: 2vw;
+        border: 0.2vw solid rgba(92, 46, 6, 0.977);
+        border-radius: 3vw;
+        color: rgba(92, 52, 6, 0.977);
+        box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2),0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
+      }
+      #btnjoin2:hover{
+        background-color: rgba(92, 59, 6, 0.977);
+        color: aliceblue;
+        transition: ease-in;
+        transition-delay: 0.05s;
+        box-shadow: 0 0.6vw 1vw rgba(0, 0, 0, 0.3),0 0.8vw 2.4vw 0 rgba(0, 0, 0, 0.29);
+      }
+    </style>
+    <div class="container">
+      <div class="greeting">
+        <img src="fatman-removebg-preview.png" width="50vw"/>
+        <p>Hello , Name</p>
+      </div>
+      <div class="nav">
+        <div class="home"><a href="#">Home</a></div>
+        <div class="aboutus"><a href="#">About Us</a></div>
+        <div class="dietplans"><a href="#">diet plans</a></div>
+        <div class="yoga"><a href="#">Yoga</a></div>
+        <div class="Account"><a href="#">Account</a></div>
+        <div class="login"><a href="#">login</a></div>
+      </div>
+      <div class="profile_container">
+        <div id="profilestate">
+          <div id="new"></div>
+          <p>Your Weight<br />60 Kg</p>
+          <span></span>
+        </div>
+        <div id="profilestate">
+          <div id="new"></div>
+          <p>Your height<br />182 cm</p>
+          <span></span>
+        </div>
+        <div id="profilestate">
+          <div id="new"></div>
+          <p>Your BMI<br />19.13</p>
+          <span></span>
+        </div>
+        <div id="profilestate">
+          <div id="new"></div>
+          <p>Your AGE<br />21 Year</p>
+          <span></span>
+        </div>
+      </div>
+      <div class="workout">
+        <div class="workouttext"><p>START <br>Your Workout ! Today</p><br><p>With US</p><button id="btnjoin"><a href="#"></a>Join Us</button></div>
+        <div class="workoutstart"><img src="fatman-removebg-preview.png" width="300vw"></a>Beginner</div>
+        <div class="workoutstart"><img src="normalMan-removebg-preview.png" width="300vw"></a>Intermediate</div>
+        <div class="workoutstart"><img src="muscler_man-removebg-preview.png" width="300vw"></a>Advance</div>
+      </div>
+      <div class="foodsection">
+        <div class="searchbar">
+          <div class="material-symbols-rounded"><a href="#"><img src="search_fill.png"></a></div>
+          <div class="foodsearch">
+            <label id="foodsearch">What you have eaten ? eg.</label>
+            <input type="text" id="foodsearchinput" placeholder=" Roti,dal,pizza,milk,etc ...">
+          </div>
+        </div>
+      </div>
+      <div class="meditationSection">
+        <div class="meditationText">
+          <h3>Wanna Improve Your Health ?<br>Start Meditation Today</h3>
+          <button id="btnjoin2"><a href="#"></a>Start Now</button>
+          <p>Take a moment to relax, <br>close your eyes, and focus on your breath !!</p>
+          <p>Meditation can bring peace, clarity, and
+            tranquility to your mind.</p>
+        </div>
+        <div class="meditationImg">
+          <img src="yogaman.png" width="400vw">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
